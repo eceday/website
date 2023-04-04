@@ -1,3 +1,46 @@
 .container {
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 0 2rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    span {
+      color: #296d90;
+      width: 100%;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+    }
+
+    .leftText {
+      text-align: start;
+    }
+
+    .centerText {
+      text-align: center;
+    }
+
+    .logosRow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+
+      img {
+        height: 6rem;
+      }
+    }
+  }
+
+  @media screen and (width <=768px) {
+    .largeLogo {
+      width: 50%;
+    }
+  }
 }
