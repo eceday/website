@@ -49,17 +49,40 @@
     }
 
     .faqRow{
-      display: flex;
+      display: grid;
       justify-content: space-between;
-      width: 100%;
+      grid-template-columns: max-content max-content;
+      grid-template-rows: max-content min-content;
+      grid-template-areas: 
+        "que button"
+        "ans ans";
       .faqText{
+        grid-area: que;
         color: #4FB099;
         font-size: 1.5rem;
-        align-self: flex-start;
+        // align-self: flex-start;
       }
       .faqPlus{
+        grid-area: button;
         cursor: pointer;
-        margin-right: 0;
+      }
+      .faqAns{
+        grid-area: ans;
+        text-align: left;
+      }
+      .faqPlus[currentstate='1']{
+        animation: turnX 0.25s ease-in 0s 1 normal forwards;
+      }
+      .faqPlus[currentstate='0']{
+        animation: turnPlus 0.25s ease-in 0s 1 normal forwards;
+      }
+      @keyframes turnX {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(45deg);} 
+      }
+      @keyframes turnPlus {
+        from {transform:rotate(45deg);}
+        to {transform:rotate(0deg);} 
       }
     }
   }
