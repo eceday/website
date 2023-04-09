@@ -4,14 +4,16 @@ const About = () => (
   <section className={style.container}>
     <div className={style.content}>
       <div className={style.aboutLeft}>
-        <img src="landing_hero.svg" alt="Placeholder" className={style.aboutImg} />
+        <img src="ece.jpg" alt="Placeholder" className={style.aboutImg} />
       </div>
       <div className={style.aboutRight}>
         <h1>Join Us At ECE Day 2023</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
-          hendrerit urna. Pellentesque sit amet sapien. Aliquam in hendrerit urna. Pellentesque sit
-          amet sapien. Aliquam in hendrerit urna. Pellentesque sit amet sapien.
+          ECE Day is a celebration of the students and faculty members of the ECE Department at
+          UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials
+          for you to attend. Students that attend events will earn raffle tickets, which can go
+          towards winning our prizes, which include speakers, keyboards, and a Nintendo Switch! We
+          look forward to seeing you there!
         </p>
       </div>
     </div>

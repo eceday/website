@@ -3,11 +3,11 @@
   display: grid;
   place-items: center;
   padding: 0 2rem;
+  margin-top: 5rem;
 
   .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-height: 80vh;
     gap: 2rem;
 
     .landingLeft {

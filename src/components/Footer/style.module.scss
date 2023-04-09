@@ -3,6 +3,8 @@
   display: grid;
   place-items: center;
   padding: 0 2rem;
+  margin: 5rem 0;
+  width: 75%;
 
   .content {
     display: flex;
@@ -33,14 +35,24 @@
       gap: 3rem;
 
       img {
+<<<<<<< HEAD
         height: 6rem;
+=======
+        max-width: 100%;
+        max-height: 6rem;
+        height: auto;
+>>>>>>> main
       }
     }
   }
 
   @media screen and (width <=768px) {
     .largeLogo {
+<<<<<<< HEAD
       width: 50%;
+=======
+      width: fit-content;
+>>>>>>> main
     }
   }
 }
