@@ -8,7 +8,6 @@ const Schedule = () => {
   const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
   const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${CAL_ID}/events?${BASEPARAMS}`;
 
-  const test = [0, 1, 2];
   const [eventsResponse, setEventsResponse] = useState([]);
 
   const getEvents = async () => {
@@ -18,7 +17,6 @@ const Schedule = () => {
       const responseJSON = await response.json();
       setEventsResponse(responseJSON.items);
     } catch (e) {
-      alert(e);
       setEventsResponse([]);
     }
   };
