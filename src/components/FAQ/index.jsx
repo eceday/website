@@ -14,7 +14,7 @@ export default function FAQ() {
     },
     {
       q: "What should I bring?",
-      a: "Yourself",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       q: "When is it?",
@@ -22,7 +22,7 @@ export default function FAQ() {
     },
     {
       q: "Does it cost money?",
-      a: "Nope",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       q: "Can I join remotely?",
@@ -59,7 +59,7 @@ export default function FAQ() {
           currentstate={showAns[ind] ? 1 : 0}
         />
         {showAns[ind] && 
-          <p className={style.faqAns}>{questions[ind].a}</p>
+          <div className={style.faqAns}>{questions[ind].a}</div>
         }
       </div>
     );
@@ -73,7 +73,7 @@ export default function FAQ() {
       </div>
 
       
-      <div className={style.left}>
+      <div className={`${style.faqs} ${style.faqsLeft}`}>
         {[0, 1, 2, 3].map(x=>createRow(x))}
       </div>
 
@@ -81,7 +81,7 @@ export default function FAQ() {
         <img src="bulb.svg" alt="Light Bulb" className={style.lightbulbImage} />
       </div>
 
-      <div className={style.right}>
+      <div className={`${style.faqs} ${style.faqsRight}`} >
         {[4, 5, 6, 7].map(x=>createRow(x))}
       </div>
     
