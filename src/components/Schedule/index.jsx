@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import style from './style.module.scss';
 
@@ -34,9 +35,20 @@ const Schedule = () => {
       <div className={style.header}>Schedule</div>
       {eventsResponse &&
         eventsResponse.map(element => {
+          const startDate = new Date(element.start.dateTime);
+          const location = element.location;
+          const title = element.summary;
+          const description = element.description;
           return (
             <div className={style.calendarEvent}>
-              {new Date(element.start.dateTime).toDateString()}
+              <div className={style.date}>
+                {moment(startDate).format('MMMM Do YYYY, h:mm:ss a')}
+              </div>
+              <div className={style.titleLocationContainer}>
+                <div className={style.title}>{title}</div>
+                <div className={style.location}>{location}</div>
+              </div>
+              <div className={style.description}>{description}</div>
             </div>
           );
         })}

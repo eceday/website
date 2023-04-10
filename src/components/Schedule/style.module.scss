@@ -17,7 +17,7 @@
   }
   @media screen and (width <= 768px) {
     .fallenStar {
-      margin-left: 2em;
+      margin-left: 4em;
 
       img {
         width: 80px;
@@ -29,7 +29,7 @@
     background-color: #4fb099;
     color: white;
     font-weight: 500;
-    font-size: 36;
+    font-size: 36px;
     padding: 10px;
     margin-top: 93px;
   }
@@ -37,6 +37,7 @@
   @media screen and (width <= 768px) {
     .header {
       margin-top: 53px;
+      font-size: 28px;
     }
   }
 
@@ -45,22 +46,64 @@
     margin-top: 20px;
     background: linear-gradient(180deg, #25bea2 0%, #c8f5a6 100%);
     border-radius: 16px;
-    padding: 10px;
+    padding: 20px;
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-
+    align-items: flex-start;
+    font-weight: 700;
     .date {
+      color: white;
+      line-height: 26px;
+      font-size: 20px;
+      text-align: left;
     }
     .titleLocationContainer {
+      place-items: center;
+      display: flex;
+      justify-content: space-between;
+      font-size: 36px;
+      line-height: 47px;
+      color: white;
       .title {
+        flex-direction: row;
+        flex-grow: inherit;
+        text-align: left;
       }
       .location {
+        flex-direction: row;
+        flex-grow: unset;
+        font-weight: 300;
+        text-align: right;
+        margin-left: 20px;
       }
     }
 
     .description {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 31px;
+      color: white;
+      text-align: left;
+    }
+  }
+
+  @media screen and (width <= 768px) {
+    .calendarEvent {
+      padding: 15px;
+      .date {
+        line-height: 22px;
+        font-size: 16px;
+      }
+      .titleLocationContainer {
+        font-size: 26px;
+        line-height: 37px;
+      }
+      .description {
+        font-size: 16px;
+        line-height: 25px;
+      }
     }
   }
 }
