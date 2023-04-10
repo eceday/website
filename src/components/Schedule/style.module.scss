@@ -1,3 +1,66 @@
 .container {
   min-height: 100vh;
+  display: inline-block;
+  place-items: center;
+  padding: 0 2rem;
+  margin: 5rem 0;
+  width: 90%;
+
+  .fallenStar {
+    position: absolute;
+    margin-left: 4em;
+    display: inline-block;
+
+    img {
+      width: 140px;
+    }
+  }
+  @media screen and (width <= 768px) {
+    .fallenStar {
+      margin-left: 2em;
+
+      img {
+        width: 80px;
+      }
+    }
+  }
+
+  .header {
+    background-color: #4fb099;
+    color: white;
+    font-weight: 500;
+    font-size: 36;
+    padding: 10px;
+    margin-top: 93px;
+  }
+
+  @media screen and (width <= 768px) {
+    .header {
+      margin-top: 53px;
+    }
+  }
+
+  .calendarEvent {
+    min-height: 300px;
+    margin-top: 20px;
+    background: linear-gradient(180deg, #25bea2 0%, #c8f5a6 100%);
+    border-radius: 16px;
+    padding: 10px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+    .date {
+    }
+    .titleLocationContainer {
+      .title {
+      }
+      .location {
+      }
+    }
+
+    .description {
+    }
+  }
 }
