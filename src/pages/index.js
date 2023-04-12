@@ -15,8 +15,3 @@ const Home = () => (
 );
 
 export default Home;
-
-// // Experimental: Fully disable client-side JS to improve page load
-// export const config = {
-//   unstable_runtimeJS: false,
-// };

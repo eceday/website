@@ -8,6 +8,7 @@
   .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-height: 80vh;
     gap: 2rem;
 
     .landingLeft {

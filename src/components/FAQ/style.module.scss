@@ -1,3 +1,128 @@
 .container {
+  max-width: 100vw;
   min-height: 100vh;
+  width: 90vw;
+  display: grid;
+  justify-content: center;
+  // border: solid;
+  // border-color: blue; 
+
+  .content{
+    // border: solid;
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 15vh 85vh;
+    grid-template-areas: 
+      "header header header"
+      "left center right";
+
+    .header{
+      // border: solid;
+      grid-area: header;
+      align-self: center;
+      display: grid;
+      place-items: center;
+      height: 10vh;
+      
+      .headerTxt{
+        color: #4FB099;
+        font-size: 2.5em;
+      }
+    }
+
+    .faqsLeft{grid-area: left;}
+    .faqsRight{grid-area: right;}
+
+    .faqs{
+      // border: solid;
+      // border-color: green;
+      display: flex;
+      flex-direction: column;
+      padding-top: 15vh;
+    }
+
+    .center{
+      // border: solid;
+      // border-color: orange;
+      .lightbulbImage{
+        width: 100%;
+      }
+    }
+
+    .faqRow{
+      // border: solid;
+      // border-color: red;
+      margin: 1.8em 0;
+
+      .faqText{
+        color: #4FB099;
+        font-size: 1.6rem;
+        display: inline-block;
+        // border: solid;
+      }
+      .faqPlus{
+        cursor: pointer;
+        vertical-align: bottom;
+        float: right;
+        // border: solid;
+        height: 2em;
+
+      }
+      .faqAns{
+        // border: solid;
+        text-align: center;
+        overflow-wrap: break-word; 
+        width: 100%;
+        line-height: 1.8;
+        padding-top: 1em;
+      }
+      .faqPlus[currentstate='1']{
+        animation: turnX 0.25s ease-in 0s 1 normal forwards;
+      }
+      .faqPlus[currentstate='0']{
+        animation: turnPlus 0.25s ease-in 0s 1 normal forwards;
+      }
+      @keyframes turnX {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(45deg);} 
+      }
+      @keyframes turnPlus {
+        from {transform:rotate(45deg);}
+        to {transform:rotate(0deg);} 
+      }
+    } 
+  }
 }
+
+@media screen and (width <=870px) {
+  .container{
+    align-content: start;
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .header{
+        order: 1;
+        max-width: 80%;
+      }
+      .center{
+        order: 2;
+        max-width: 50vh;
+        max-height: 50vh;
+        img{
+          height: 100%;
+        }
+      }
+      .faqs{
+        width: 80%;
+        padding-top: 0;
+      }
+      .faqsLeft{order: 3;}
+      .faqsRight{order: 4;}
+    }
+  }
+}
+
