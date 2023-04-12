@@ -1,21 +1,21 @@
-import moment from 'moment';
+import * as moment from 'moment';
 import { useEffect, useState } from 'react';
 import style from './style.module.scss';
 
-const Schedule = () => {
-  const CAL_API = 'AIzaSyBbeJA33TZOj0WfZtv9DNC9Yxe6MrjWbLQ';
-  const CAL_ID = 'eceday%40eng.ucsd.edu';
-  const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
-  const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${CAL_ID}/events?${BASEPARAMS}`;
+const CAL_API = 'AIzaSyBbeJA33TZOj0WfZtv9DNC9Yxe6MrjWbLQ';
+const CAL_ID = 'eceday%40eng.ucsd.edu';
+const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
+const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${CAL_ID}/events?${BASEPARAMS}`;
+const finalURL = `${BASEURL}${`&maxResults=${30}`}&key=${CAL_API}`;
 
+const Schedule = () => {
   const [eventsResponse, setEventsResponse] = useState([]);
 
   const getEvents = async () => {
-    const finalURL = `${BASEURL}${`&maxResults=${30}`}&key=${CAL_API}`;
     try {
-      const response = await (typeof window !== 'undefined' ? fetch(finalURL) : null);
-      const responseJSON = await response.json();
-      setEventsResponse(responseJSON.items);
+      const response = await fetch(finalURL);
+      const data = await response.json();
+      setEventsResponse(data.items);
     } catch (e) {
       setEventsResponse([]);
     }
@@ -30,26 +30,26 @@ const Schedule = () => {
       <div className={style.fallenStar}>
         <img className={style.starImage} src="Fallen_Star.svg" />
       </div>
-      <div className={style.header}>Schedule</div>
-      {eventsResponse &&
-        eventsResponse.map(element => {
-          const startDate = new Date(element.start.dateTime);
-          const location = element.location;
-          const title = element.summary;
-          const description = element.description;
-          return (
-            <div className={style.calendarEvent}>
-              <div className={style.date}>
-                {moment(startDate).format('MMMM Do YYYY, h:mm:ss a')}
+      <h1 className={style.header}>Schedule</h1>
+      <div className={style.schedule}>
+        {eventsResponse &&
+          eventsResponse.map(({ start, location, summary, description }) => {
+            const startDate = new Date(start.dateTime);
+
+            return (
+              <div className={style.calendarEvent}>
+                <span className={style.date}>
+                  {moment(startDate).format('MMMM Do YYYY, h:mm a')}
+                </span>
+                <div className={style.titleLocationContainer}>
+                  <span className={style.title}>{summary}</span>
+                  <span className={style.location}>{location}</span>
+                </div>
+                <span className={style.description}>{description}</span>
               </div>
-              <div className={style.titleLocationContainer}>
-                <div className={style.title}>{title}</div>
-                <div className={style.location}>{location}</div>
-              </div>
-              <div className={style.description}>{description}</div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </section>
   );
 };

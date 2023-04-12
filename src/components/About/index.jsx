@@ -1,10 +1,10 @@
 import style from './style.module.scss';
 
 const About = () => (
-  <section className={style.container}>
+  <section className={style.container} id="about">
     <div className={style.content}>
       <div className={style.aboutLeft}>
-        <img src="ece.jpg" alt="Placeholder" className={style.aboutImg} />
+        <img src="about.png" alt="About Image" className={style.aboutImg} />
       </div>
       <div className={style.aboutRight}>
         <h1>Join Us At ECE Day 2023</h1>

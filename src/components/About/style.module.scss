@@ -1,5 +1,4 @@
 .container {
-  min-height: 100vh;
   display: grid;
   place-items: center;
   margin: 4rem 0;
@@ -17,6 +16,7 @@
       .aboutImg {
         max-height: 100%;
         max-width: 100%;
+        border-radius: 0.5rem;
       }
     }
 
@@ -47,8 +47,8 @@
     }
 
     @media screen and (width <= 768px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
 
       .aboutLeft {
         grid-row-start: 1;

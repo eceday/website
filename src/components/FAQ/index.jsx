@@ -1,90 +1,83 @@
-import { useState } from 'react';
+import FAQItem from 'components/FAQItem';
 import style from './style.module.scss';
 
+const questions = [
+  {
+    q: 'What is ECE Day?',
+    a: 'ECE Day is a celebration of the students and faculty members of the ECE Department at UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials for you to attend. Students that attend events will earn raffle tickets, which can go towards winning our prizes, which include speakers, keyboards, and a Nintendo Switch! We look forward to seeing you there!',
+  },
+  {
+    q: 'Who can attend?',
+    a: 'Anyone can attend! We welcome students of all ages, majors, and skill levels.',
+  },
+  {
+    q: 'What should I bring?',
+    a: 'Just your enthusiasm and willingness to learn! We hope you gain something from attending :)',
+  },
+  {
+    q: 'When is it?',
+    a: 'ECE Day 2023 will be on April 14, 2023. We will be hosting a variety of events on Warren Mall and in Jacob’s Hall. Be sure to check our calendar to see which event is being held where!',
+  },
+  {
+    q: 'Does it cost money?',
+    a: 'Nope! ECE Day is completely free.',
+  },
+  {
+    q: 'Can I join remotely?',
+    a: 'If you require any accommodations to participate in ECE Day, please email us at eceday@eng.ucsd.edu. We will do our best to accommodate your needs.',
+  },
+  {
+    q: 'How do I sign up?',
+    a: 'No signups are required! We will be having you sign into each event you attend.',
+  },
+  {
+    q: 'Where is it?',
+    a: 'Our events will take place in Warren Mall and various rooms in Jacob’s Hall (the building with the Fallen Star).',
+  },
+];
+
 export default function FAQ() {
-
-  const questions = [
-    {
-      q: "What is ECE Day?", 
-      a: "Good question",
-    },
-    {
-      q: "Who can attend?", 
-      a: "Anyone",
-    },
-    {
-      q: "What should I bring?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
-    {
-      q: "When is it?",
-      a: "Next Thursday?",
-    },
-    {
-      q: "Does it cost money?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
-    {
-      q: "Can I join remotely?",
-      a: "No?",
-    },
-    {
-      q: "How do I sign up?",
-      a: "Just show up",
-    },
-    {
-      q: "Where is it?",
-      a: "Warren Bear",
-    }
-  ];
-  
-  const [showAns, setShowAns] = useState(new Array(questions.length).fill(false));
-
-  function handleClick(ind){
-    let newShowAns = new Array(questions.length).fill(false);
-    if (showAns[ind] == false)
-      newShowAns[ind] = true;
-    setShowAns(newShowAns);
-  }
-
-  function createRow(ind){
-    return (
-      <div className={style.faqRow} key={ind}>
-        <p className={style.faqText}>{questions[ind].q}</p>
-        <img 
-          src="faqPlus.svg" 
-          alt="Expand FAQ" 
-          className={style.faqPlus} 
-          onClick={()=>handleClick(ind)}
-          currentstate={showAns[ind] ? 1 : 0}
-        />
-        {showAns[ind] && 
-          <div className={style.faqAns}>{questions[ind].a}</div>
-        }
-      </div>
-    );
-  }
-
   return (
-  <section id="faq" className={style.container}>
-    <div className={style.content}>
-      <div className={style.header}>
-        <h1 className={style.headerTxt}>Frequently Asked Questions</h1>
+    <section id="faq" className={style.container}>
+      <div className={style.content}>
+        <h1 className={style.header}>Frequently Asked Questions</h1>
+        <div className={`${style.left} ${style.faq}`}>
+          <FAQItem
+            title="What is ECE Day?"
+            description="ECE Day is an annual celebration of the students and faculty members of the ECE Department at UCSD!"
+          />
+          <FAQItem
+            title="When is ECE Day?"
+            description="ECE Day 2023 will be on April 14, 2023. Be sure to check our calendar to stay updated!"
+          />
+          <FAQItem
+            title="How do I sign up?"
+            description="No signups are required! We will be having you sign into each event you attend."
+          />
+          <FAQItem title="Does it cost money?" description="Nope! ECE Day is completely free." />
+        </div>
+        <div className={style.center}>
+          <img src="bulb.png" alt="Light Bulb" className={style.lightbulbImage} />
+        </div>
+        <div className={`${style.right} ${style.faq}`}>
+          <FAQItem
+            title="Who can attend?"
+            description="Anyone can attend! We welcome students of all ages, majors, and skill levels."
+          />
+          <FAQItem
+            title="Where is it taking place?"
+            description="Our events will take place in Warren Mall and various rooms in Jacob’s Hall (the building with the Fallen Star)."
+          />
+          <FAQItem
+            title="What should I bring?"
+            description="Just your enthusiasm and willingness to learn! We hope you gain something from attending :)"
+          />
+          <FAQItem
+            title="What if I need accomodations?"
+            description="If you require any accommodations to participate in ECE Day, please email us at eceday@eng.ucsd.edu."
+          />
+        </div>
       </div>
-
-      
-      <div className={`${style.faqs} ${style.faqsLeft}`}>
-        {[0, 1, 2, 3].map(x=>createRow(x))}
-      </div>
-
-      <div className={style.center}>
-        <img src="bulb.svg" alt="Light Bulb" className={style.lightbulbImage} />
-      </div>
-
-      <div className={`${style.faqs} ${style.faqsRight}`} >
-        {[4, 5, 6, 7].map(x=>createRow(x))}
-      </div>
-    
-    </div>  
-  </section>);
+    </section>
+  );
 }

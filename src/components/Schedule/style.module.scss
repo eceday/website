@@ -41,69 +41,60 @@
     }
   }
 
-  .calendarEvent {
-    min-height: 300px;
-    margin-top: 20px;
-    background: linear-gradient(180deg, #25bea2 0%, #c8f5a6 100%);
-    border-radius: 16px;
-    padding: 20px;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    align-items: flex-start;
-    font-weight: 700;
-    .date {
-      color: white;
-      line-height: 26px;
-      font-size: 20px;
-      text-align: left;
-    }
-    .titleLocationContainer {
-      place-items: center;
-      display: flex;
-      justify-content: space-between;
-      font-size: 36px;
-      line-height: 47px;
-      color: white;
-      .title {
-        flex-direction: row;
-        flex-grow: inherit;
-        text-align: left;
-      }
-      .location {
-        flex-direction: row;
-        flex-grow: unset;
-        font-weight: 300;
-        text-align: right;
-        margin-left: 20px;
-      }
-    }
-
-    .description {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 31px;
-      color: white;
-      text-align: left;
-    }
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
   }
 
-  @media screen and (width <= 768px) {
-    .calendarEvent {
-      padding: 15px;
-      .date {
-        line-height: 22px;
-        font-size: 16px;
+  .calendarEvent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(180deg, #25bea2 0%, hsl(94, 80%, 81%) 100%);
+
+    .date {
+      text-align: left;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .titleLocationContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (width <= 768px) {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .titleLocationContainer {
-        font-size: 26px;
-        line-height: 37px;
+
+      .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 47px;
+        color: #ffffff;
+        text-align: left;
       }
-      .description {
-        font-size: 16px;
-        line-height: 25px;
+
+      .location {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 47px;
+        color: #ffffff;
       }
+    }
+    .description {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 31px;
+      color: #ffffff;
+      text-align: left;
     }
   }
 }

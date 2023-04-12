@@ -1,0 +1,57 @@
+.item {
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 42px;
+  color: #4fb099;
+
+  button {
+    all: unset;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 3rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    row-gap: 1rem;
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    transition: all 300ms ease-in-out;
+    place-items: center;
+
+    &:hover {
+      background-color: #4fb09927;
+    }
+
+    span {
+      text-align: left;
+      width: 100%;
+    }
+
+    img {
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  transition: all 300ms ease-in-out;
+
+  &[data-open='open'] {
+    p {
+      height: 100%;
+      padding: 0.5rem;
+    }
+
+    img {
+      transform: rotate(135deg);
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 130%;
+    height: 0px;
+    overflow: hidden;
+    transition: all 150ms linear;
+    text-align: left;
+    padding: 0rem 0.5rem;
+  }
+}
