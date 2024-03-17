@@ -48,7 +48,7 @@ export default function FAQ() {
           />
           <FAQItem
             title="When is ECE Day?"
-            description="ECE Day 2023 will be on April 14, 2023. Be sure to check our calendar to stay updated!"
+            description="ECE Day 2024 will be on April 12, 2024. Be sure to check our calendar to stay updated!"
           />
           <FAQItem
             title="How do I sign up?"
