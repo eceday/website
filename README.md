@@ -1,6 +1,6 @@
 # ECE Day Website
 
-This repo is the static website for ECE Day 2023, built in Next.js.
+This repo is the static website for ECE Day 2024, built in Next.js.
 
 ## Installation
 

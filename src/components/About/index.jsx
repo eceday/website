@@ -7,7 +7,7 @@ const About = () => (
         <img src="about.png" alt="About Image" className={style.aboutImg} />
       </div>
       <div className={style.aboutRight}>
-        <h1>Join Us At ECE Day 2023</h1>
+        <h1>Join Us At ECE Day 2024</h1>
         <p>
           ECE Day is a celebration of the students and faculty members of the ECE Department at
           UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials
