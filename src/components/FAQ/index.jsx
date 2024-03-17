@@ -4,7 +4,7 @@ import style from './style.module.scss';
 const questions = [
   {
     q: 'What is ECE Day?',
-    a: 'ECE Day is a celebration of the students and faculty members of the ECE Department at UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials for you to attend. Students that attend events will earn raffle tickets, which can go towards winning our prizes, which include speakers, keyboards, and a Nintendo Switch! We look forward to seeing you there!',
+    a: 'ECE Day is a celebration of the students and faculty members of the ECE Department at UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials for you to attend. Students that attend events will earn raffle tickets, which can go towards winning our prizes! We look forward to seeing you there!',
   },
   {
     q: 'Who can attend?',
@@ -16,7 +16,7 @@ const questions = [
   },
   {
     q: 'When is it?',
-    a: 'ECE Day 2023 will be on April 14, 2023. We will be hosting a variety of events on Warren Mall and in Jacob’s Hall. Be sure to check our calendar to see which event is being held where!',
+    a: 'ECE Day 2024 will be on April 12, 2024. We will be hosting a variety of events on Warren Mall and in Jacob’s Hall. Be sure to check our calendar to see which event is being held where!',
   },
   {
     q: 'Does it cost money?',
