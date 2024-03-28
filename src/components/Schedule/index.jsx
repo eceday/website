@@ -2,8 +2,8 @@ import * as moment from 'moment';
 import { useEffect, useState } from 'react';
 import style from './style.module.scss';
 
-const CAL_API = 'AIzaSyBbeJA33TZOj0WfZtv9DNC9Yxe6MrjWbLQ';
-const CAL_ID = 'eceday%40eng.ucsd.edu';
+const CAL_API = 'AIzaSyCaTQUMVuHM1jzm1QzsU3QagNNpwkPZgP4';
+const CAL_ID = 'eceday@ucsd.edu';
 const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
 const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${CAL_ID}/events?${BASEPARAMS}`;
 const finalURL = `${BASEURL}${`&maxResults=${30}`}&key=${CAL_API}`;

@@ -12,8 +12,7 @@ const About = () => (
           ECE Day is a celebration of the students and faculty members of the ECE Department at
           UCSD. We’ll be having a surprise faculty speaker, tabling events, workshops, and socials
           for you to attend. Students that attend events will earn raffle tickets, which can go
-          towards winning our prizes, which include speakers, keyboards, and a Nintendo Switch! We
-          look forward to seeing you there!
+          towards winning our prizes! We look forward to seeing you there!
         </p>
       </div>
     </div>
